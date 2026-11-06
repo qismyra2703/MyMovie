@@ -1,0 +1,12 @@
+{
+  "name": "mymovie-app",
+  "version": "1.0.0",
+  "description": "MyMovie - Movie Plan Application (Electron)",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "electron": "^45.0.0"
+  }
+}
