@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>MyMovie - Discover</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src * data:; connect-src https://www.omdbapi.com; style-src 'self' 'unsafe-inline'">
+<link rel="stylesheet" href="style.css"></head>
+
+<body>
+<nav><span class="brand">
+    MyMovie</span><a class="active" href="index.html">Discover</a><a href="watchlist.html">My Watchlist</a></nav>
+<main>
+  <div id="msg" class="msg info">Save your free OMDb API key (omdbapi.com/apikey.aspx), search for a movie.</div>
+
+  <section class="panel"><h2>1. API Key</h2>
+    <div class="row">
+      <label>OMDb API key<input id="apikey" type="password" autocomplete="off" placeholder="Paste your API key"></label>=
+      <button id="saveKey">Save Key</button>
+    </div>
+  </section>
+
+  <section class="panel"><h2>2. Search Movies</h2>
+    <form id="searchForm" class="row">
+      <label>Movie title<input id="query" type="text" placeholder="e.g. Batman"></label>
+      <button type="submit">Search</button>
+    </form>
+  </section>
+
+  <section class="panel">
+    <h2>3. Movie Suggestion</h2>
+
+    <p>Pick your mood. The app chooses the best movie from your search results.</p>
+    <div class="row">
+      <label>Genre
+        <select id="genre">
+          <option>Any</option
+            ><option>Action</option>
+            <option>Comedy</option>
+          <option>Drama</option>
+          <option>Horror</option>
+          <option>Romance</option>
+          <option>Sci-Fi</option>
+          <option>Animation</option>
+          <option>Adventure</option>
+        </select>
+      </label>
+
+      <label>Time available (minutes)
+        <input id="maxMins" type="number" min="30" max="400" value="120">
+      </label>
+      <label>Minimum IMDb rating
+        <input id="minRating" type="number" min="0" max="10" step="0.1" value="6">
+      </label>
+      <button id="suggestBtn">Suggest</button>
+    </div>
+    <div id="suggestion" class="suggestion"></div>
+    
+    <h3>Saved suggestions</h3>
+    <ul id="savedSuggestions"></ul>
+  </section>
+
+  <div id="results" class="grid"></div>
+</main>
+<script src="store.js"></script>
+<script src="discover.js"></script>
+
+</body>
+</html>
